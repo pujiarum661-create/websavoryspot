@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --pink: #D4451A;
+  --pink-gelap: #4A1A0A;
+  --pink-muda: #FFF0E6;
+  --pink-soft: #FFDAC1;
+  --putih: #FFFAF5;
+  --teks: #2C1810;
+  --teks-abu: #6B4226;
+  --bg: #FFF8F2;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--teks);
+  font-size: 16px;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--putih) !important;
+  border-bottom: 1px solid #f0e0d6;
+  padding: 1rem 0;
+}
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--pink) !important;
+  text-decoration: none;
+}
+.navbar-brand span { color: var(--pink-gelap); }
+.nav-link {
+  color: var(--teks-abu) !important;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.nav-link:hover, .nav-link.aktif {
+  color: var(--pink) !important;
+  font-weight: 600;
+  background: var(--pink-muda);
+}
+
+/* HEADER */
+.header-halaman {
+  background: linear-gradient(#4a1a0a4f, #01010167), url('bg1.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: 4rem 2rem;
+  color: white;
+}
+.label {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFD4A8;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.header-halaman h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.header-halaman h1 em { color: #FFD4A8; font-style: italic; }
+.header-halaman p { font-size: 1rem; color: rgba(255,255,255,0.85); }
+
+.input-cari {
+  border-radius: 8px !important;
+  padding: 0.85rem 1.2rem !important;
+  border: 2px solid rgba(255,255,255,0.4) !important;
+  background: rgba(255,255,255,0.15) !important;
+  color: white !important;
+  font-size: 1rem;
+}
+.input-cari::placeholder { color: rgba(255,255,255,0.6); }
+.input-cari:focus {
+  border-color: white !important;
+  background: rgba(255,255,255,0.2) !important;
+  box-shadow: none !important;
+}
+
+/* FILTER */
+.strip-filter {
+  background: white;
+  padding: 1rem 0;
+  border-bottom: 1px solid hsl(20, 83%, 44%);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.strip-filter::-webkit-scrollbar { display: none; }
+
+.tombol-filter {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  margin: 0 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--teks-abu);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+.tombol-filter.aktif, .tombol-filter:hover {
+  background: var(--pink-muda);
+  color: var(--pink);
+  font-weight: 600;
+}
+
+/* KARTU */
+.seksi-kartu { padding: 2.5rem 0 4rem; }
+
+.info-hasil { font-size: 0.9rem; color: var(--teks-abu); }
+.info-hasil span { color: var(--pink); font-weight: 700; }
+
+.kosong-teks { color: var(--teks-abu); font-size: 1rem; }
+
+.kartu {
+  background: rgb(237, 235, 235);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  height: 100%;
+}
+.kartu:hover { transform: translateY(-4px); }
+
+.kartu-gambar {
+  height: 180px;
+  overflow: hidden;
+  background: var(--pink-muda);
+  position: relative;
+}
+.kartu-gambar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.kartu-gambar.gambar-fallback::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.kartu-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 5px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  z-index: 2;
+}
+.badge-hot { background: var(--pink); }
+.badge-baru { background: #10b981; }
+.badge-top { background: #f59e0b; }
+
+.kartu-isi { padding: 1.1rem; }
+
+.kartu-kategori-label {
+  font-size: 0.72rem;
+  color: var(--pink);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.kartu-nama {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--pink-gelap);
+  margin-bottom: 0.25rem;
+}
+.kartu-lokasi {
+  font-size: 0.83rem;
+  color: var(--teks-abu);
+  margin-bottom: 0.7rem;
+}
+.kartu-bawah {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kartu-rating {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--teks);
+}
+.kartu-rating .bintang { color: var(--pink); }
+.kartu-harga {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pink);
+}
+.kartu-tags {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+.tag {
+  background: var(--pink-muda);
+  border-radius: 4px;
+  padding: 0.12rem 0.5rem;
+  font-size: 0.75rem;
+  color: var(--teks-abu);
+}
+
+
+/* FOOTER */
+footer {
+  background: var(--pink-gelap);
+  color: rgba(250,243,246,0.7);
+  padding: 3rem 0 1.5rem;
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.footer-brand span { color: #E8A87C; }
+footer p { font-size: 0.95rem; line-height: 1.7; }
+footer h5 {
+  color: white;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+footer ul { list-style: none; padding: 0; }
+footer ul li { margin-bottom: 0.5rem; }
+footer ul a {
+  color: rgba(245,232,224,0.6);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+footer ul a:hover { color: #E8A87C; }
+footer hr { border-color: rgba(255,255,255,0.1); }
+.footer-bawah {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(251,250,250,0.35);
+}
+
+footer h5 {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+footer ul { list-style: none; padding: 0; }
+footer ul li { margin-bottom: 0.5rem; }
+footer ul a {
+  color: rgba(245,232,224,0.6);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+footer ul a:hover { color: #E8A87C; }
+footer hr { border-color: rgba(255,255,255,0.1); }
+.footer-bawah {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(251,250,250,0.35);
+}

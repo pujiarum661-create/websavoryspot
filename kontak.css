@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --pink: #D4451A;
+  --pink-gelap: #4A1A0A;
+  --pink-muda: #FFF0E6;
+  --pink-soft: #FFDAC1;
+  --putih: #FFFAF5;
+  --teks: #2C1810;
+  --teks-abu: #6B4226;
+  --bg: #fefefe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--teks);
+  font-size: 16px;
+}
+
+/*NAVBAR */
+.navbar {
+  background: var(--putih) !important;
+  border-bottom: 1px solid #f0e0d6;
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--pink) !important;
+  text-decoration: none;
+}
+
+.navbar-brand span {
+  color: var(--pink-gelap);
+}
+
+.nav-link {
+  color: var(--teks-abu) !important;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.aktif {
+  color: var(--pink) !important;
+  font-weight: 600;
+  background: var(--pink-muda);
+}
+
+
+/*HEADER*/
+.header-halaman {
+  background: linear-gradient(#4a1a0a4f, #01010167), url('bg1.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: 4rem 2rem;
+  color: rgb(255, 255, 255);
+}
+
+.label-kecil {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c7792b;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.header-halaman h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.header-halaman h1 em {
+  color: #facb9b;
+  font-style: italic;
+}
+
+.header-halaman p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/*FORM + SIDEBAR*/
+.seksi-form {
+  padding: 3rem 0 5rem;
+}
+
+.kotak-form {
+  background: rgb(231, 229, 229);
+  border-radius: 12px;
+  padding: 2.5rem;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.kotak-form h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--pink-gelap);
+  margin-bottom: 0.3rem;
+}
+
+/*FORM CONTROLS*/
+.form-control,
+.form-select {
+  border: 1.5px solid #eceae9 !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 1rem !important;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--pink) !important;
+  box-shadow: 0 0 0 3px rgba(212, 69, 26, 0.12) !important;
+  background: #fff;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--teks-abu);
+}
+
+.form-check-input:checked {
+  background-color: var(--pink);
+  border-color: var(--pink);
+}
+
+textarea.form-control {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* TOMBOL KIRIM*/
+.tombol-kirim {
+  background: var(--pink);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s;
+}
+
+.tombol-kirim:hover {
+  background: var(--pink-gelap);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 69, 26, 0.3);
+}
+
+/*ALERT SUKSES*/
+.alert-sukses {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+/*SIDEBAR */
+.kotak-samping {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  margin-top: 2rem;
+}
+
+.kotak-samping h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--pink-gelap);
+  margin-bottom: 0.5rem;
+}
+
+.kotak-samping h3 em {
+  color: var(--pink);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.kotak-samping > p {
+  font-size: 0.95rem;
+  color: var(--teks-abu);
+  line-height: 1.7;
+}
+
+/*SOSMED*/
+.sosmed-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: nowrap;
+}
+
+.kotak-sosmed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--pink-muda);
+  border: none;
+  border-radius: 10px;
+  padding: 0.85rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  flex: 1;
+}
+
+.kotak-sosmed:hover {
+  background: var(--pink);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(159, 105, 88, 0.2);
+}
+
+.kotak-sosmed:hover .sosmed-nama,
+.kotak-sosmed:hover .sosmed-akun {
+  color: #fff;
+}
+
+.sosmed-nama {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--pink-gelap);
+  margin-top: 0.3rem;
+}
+
+.sosmed-akun {
+  font-size: 0.75rem;
+  color: var(--teks-abu);
+}
+
+
+
+/* NEWSLETTER */
+.newsletter {
+  background: linear-gradient(135deg, #C75B39, #4A1A0A);
+  padding: 4rem 0;
+  color: white;
+}
+
+.newsletter h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.newsletter p {
+  font-size: 1rem;
+  color: rgba(250, 248, 248, 0.85);
+}
+
+.newsletter .form-control {
+  border-radius: 8px 0 0 8px !important;
+  padding: 0.8rem 1.2rem !important;
+  border: none !important;
+  font-size: 1rem;
+}
+
+.btn-daftar {
+  background: var(--pink-gelap);
+  color: rgb(252, 235, 235);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-daftar:hover { background: #2a0d04; }
+
+.pesan-sukses {
+  color: white;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+}
+
+
+
+/* FOOTER */
+footer {
+  background: var(--pink-gelap);
+  color: rgba(250, 243, 246, 0.7);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand span {
+  color: #E8A87C;
+}
+
+footer p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+footer h5 {
+  color: white;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer ul a {
+  color: rgba(245, 232, 224, 0.6);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer ul a:hover {
+  color: #E8A87C;
+}
+
+footer hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-bawah {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(251, 250, 250, 0.35);
+}

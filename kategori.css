@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --pink: #D4451A;
+  --pink-gelap: #4A1A0A;
+  --pink-muda: #FFF0E6;
+  --pink-soft: #FFDAC1;
+  --putih: #FFFAF5;
+  --teks: #2C1810;
+  --teks-abu: #6B4226;
+  --bg: #FFF8F2;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--teks);
+  font-size: 16px;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--putih) !important;
+  border-bottom: 1px solid #f0e0d6;
+  padding: 1rem 0;
+}
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--pink) !important;
+  text-decoration: none;
+}
+.navbar-brand span { color: var(--pink-gelap); }
+.nav-link {
+  color: var(--teks-abu) !important;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.nav-link:hover, .nav-link.aktif {
+  color: var(--pink) !important;
+  font-weight: 600;
+  background: var(--pink-muda);
+}
+
+/* HEADER */
+.header-halaman {
+  background: linear-gradient(#4a1a0a4f, #08080867), url('bg1.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: 4rem 2rem;
+  color: white;
+}
+.label {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFD4A8;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.header-halaman h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.header-halaman h1 em { color: #facb9b; font-style: italic; }
+.header-halaman p { font-size: 1rem; color: rgba(255,255,255,0.85); }
+
+/* SEKSI MAKANAN */
+.seksi-makanan {
+  padding: 2.5rem 0;
+  border-top: 1px solid #f0e0d6;
+}
+.seksi-makanan.bg-putih { background: var(--putih); }
+
+.judul-seksi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.judul-seksi h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--pink-gelap);
+  margin: 0;
+}
+.link-semua {
+  color: var(--pink);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.link-semua:hover { opacity: 0.7; }
+
+/* KARTU KECIL */
+.kartu-kecil {
+  background: rgb(225, 225, 225);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.kartu-kecil:hover { transform: translateY(-3px); }
+
+.kk-foto {
+  height: 130px;
+  overflow: hidden;
+  background: var(--pink-muda);
+}
+.kk-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kk-isi { padding: 0.85rem; }
+.kk-nama {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--pink-gelap);
+  margin-bottom: 0.2rem;
+}
+.kk-lokasi {
+  font-size: 0.78rem;
+  color: var(--teks-abu);
+  margin-bottom: 0.4rem;
+}
+.kk-bawah { display: flex; justify-content: space-between; }
+.kk-rating {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--pink);
+}
+.kk-harga {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teks-abu);
+}
+
+/* SEKSI KOTA */
+.seksi-kota {
+  background: linear-gradient(135deg, #C75B39, #4A1A0A);
+  padding: 3rem 0;
+}
+.seksi-kota h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: white;
+  font-weight: 700;
+}
+.seksi-kota h2 em { color: #fbf9f897; font-style: italic; }
+
+.kotak-kota {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.kotak-kota div {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+}
+.kotak-kota:hover { background: rgba(249, 238, 238, 0.15); }
+
+
+
+/* FOOTER */
+footer {
+  background: var(--pink-gelap);
+  color: rgba(250,243,246,0.7);
+  padding: 3rem 0 1.5rem;
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.footer-brand span { color: #E8A87C; }
+footer p { font-size: 0.95rem; line-height: 1.7; }
+footer h5 {
+  color: white;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+footer ul { list-style: none; padding: 0; }
+footer ul li { margin-bottom: 0.5rem; }
+footer ul a {
+  color: rgba(245,232,224,0.6);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+footer ul a:hover { color: #E8A87C; }
+footer hr { border-color: rgba(255,255,255,0.1); }
+.footer-bawah {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(251,250,250,0.35);
+}
