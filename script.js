@@ -17,7 +17,6 @@ function daftarNewsletter() {
 }
 
 
-
 var daftarMakanan = [
   { nama:"Rawon Surabaya",         gambar:"https://i.pinimg.com/736x/e2/7d/fb/e27dfba4fd99f35994950bc846e9a351.jpg",      rating:4.9, harga:35000,  hargaTeks:"Rp 35.000",  lokasi:"Surabaya, Jawa Timur" },
   { nama:"Sate Madura Pak Arif",   gambar:"https://i.pinimg.com/736x/c7/4c/f9/c74cf9e1f03318660769c7e12c3b245c.jpg",     rating:4.8, harga:28000,  hargaTeks:"Rp 28.000",  lokasi:"Madura, Jawa Timur" },
@@ -32,8 +31,6 @@ var daftarMakanan = [
   { nama:"Martabak Telur Spesial", gambar:"https://i.pinimg.com/736x/9f/1c/fe/9f1cfed9a26135bb90e011c10942beb5.jpg",    rating:4.8, harga:30000,  hargaTeks:"Rp 30.000",  lokasi:"Bandung, Jawa Barat" },
   { nama:"Pudding Mochi Matcha",   gambar:"https://i.pinimg.com/736x/4d/e7/0c/4de70c6ef21cd41dc5876f0205711834.jpg",   rating:4.5, harga:18000,  hargaTeks:"Rp 18.000",  lokasi:"Surabaya, Jawa Timur" }
 ];
-
-var urutanAktif = "default";
 
 function tampilkanKartu(data) {
   var grid        = document.getElementById("gridKartu");
@@ -54,33 +51,14 @@ function tampilkanKartu(data) {
     var m = data[i];
     var gambarHTML = '<img src="' + m.gambar + '" alt="' + m.nama + '" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'gambar-fallback\')" />';
 
-    html += '<div class="col-lg-4 col-md-6"><div class="kartu"><div class="kartu-gambar">' + gambarHTML + '</div><div class="kartu-isi"><div class="kartu-nama">' + m.nama + '</div><div class="kartu-lokasi">📍 ' + m.lokasi + '</div><div class="kartu-bawah"><div class="kartu-rating"><span class="bintang">★</span> ' + m.rating + '</div><div class="kartu-harga">' + m.hargaTeks + '</div></div></div></div></div>';
+    html += '<div class="col-lg-4 col-md-6"><div class="kartu"><div class="kartu-gambar">' + gambarHTML + '</div><div class="kartu-isi"><div class="kartu-nama">' + m.nama + '</div><div class="kartu-lokasi"> ' + m.lokasi + '</div><div class="kartu-bawah"><div class="kartu-rating"><span class="bintang">★</span> ' + m.rating + '</div><div class="kartu-harga">' + m.hargaTeks + '</div></div></div></div></div>';
   }
   grid.innerHTML = html;
 }
 
-function terapkanFilter() {
-  var kataCari = document.getElementById("inputCari").value.toLowerCase().trim();
-
-  var hasil = daftarMakanan.filter(function(m) {
-    return !kataCari || m.nama.toLowerCase().includes(kataCari) || m.lokasi.toLowerCase().includes(kataCari);
-  });
-
-  if (urutanAktif === "rating") hasil.sort(function(a,b){ return b.rating - a.rating; });
-  if (urutanAktif === "murah")  hasil.sort(function(a,b){ return a.harga  - b.harga;  });
-  if (urutanAktif === "mahal")  hasil.sort(function(a,b){ return b.harga  - a.harga;  });
-
-  tampilkanKartu(hasil);
-}
-
 function cariMakanan() { terapkanFilter(); }
-
-function urutkanKartu() {
-  urutanAktif = document.getElementById("urutkan").value;
-  terapkanFilter();
-}
-
 tampilkanKartu(daftarMakanan);
+
 
 
 
