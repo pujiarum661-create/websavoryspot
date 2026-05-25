@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
 :root {
   --pink: #D4451A;
-  --pink-gelap: #4A1A0A;
+  --pink-gelap: #80290c;
   --pink-muda: #FFF0E6;
-  --pink-soft: #FFDAC1;
   --putih: #FFFAF5;
-  --teks: #2C1810;
-  --teks-abu: #572605;
+  --teks: #ee5f27;
+  --teks-abu: #3e3e3e;
   --bg: #FFF8F2;
 }
 
@@ -20,9 +19,6 @@ body {
   font-size: 16px;
 }
 
-em, i { font-style: normal; }
-
-
 /* NAVBAR */
 .navbar {
   background: var(--putih) !important;
@@ -30,9 +26,9 @@ em, i { font-style: normal; }
   padding: 1rem 0;
 }
 .navbar-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
   color: var(--pink) !important;
   text-decoration: none;
 }
@@ -51,7 +47,6 @@ em, i { font-style: normal; }
   background: var(--pink-muda);
 }
 
-
 /* HERO */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url('bennerkuliner.jpg') center/cover no-repeat;
@@ -62,7 +57,7 @@ em, i { font-style: normal; }
   justify-content: center;
   text-align: center;
 }
-.hero-title {
+.hero h1 {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 900;
@@ -70,40 +65,37 @@ em, i { font-style: normal; }
   margin-bottom: 1rem;
   color: #fff;
 }
-.hero-sub {
+.hero p {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.85);
+  font-weight: 400;
   max-width: 600px;
   margin: 0 auto;
 }
-
 
 /* REKOMENDASI */
 .rekomen {
   padding: 4rem 0;
   background: #fff;
 }
-
 .judul-seksi {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   border-bottom: 2px solid #e8e0db;
-  padding-bottom: 1.2rem;
+  padding-bottom: 1rem;
 }
 .judul-seksi h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 700;
-  margin-bottom: 0.4rem;
-  letter-spacing: -0.5px;
+  margin-bottom: 0.3rem;
 }
-.judul-seksi h2 em { color: var(--pink); }
-.sub {
+.judul-seksi p {
   color: var(--teks-abu);
   font-size: 0.95rem;
+  font-weight: 400;
 }
 
 .list-makan { display: flex; flex-direction: column; }
-
 .item-makan {
   display: grid;
   grid-template-columns: 48px 1fr auto;
@@ -111,18 +103,13 @@ em, i { font-style: normal; }
   gap: 1.5rem;
   padding: 1.4rem 0;
   border-bottom: 1px solid #ede5e0;
-  transition: background 0.15s;
 }
-.item-makan:last-child { border-bottom: 2px solid #e8e0db; }
-.item-makan:hover { background: #faf6f3; }
-.item-makan:hover .item-num { color: var(--pink); }
 
 .item-num {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #ddd0c8;
   line-height: 1;
-  transition: color 0.2s;
+ 
 }
 .item-nama {
   font-size: 1.1rem;
@@ -133,42 +120,33 @@ em, i { font-style: normal; }
 .item-desc {
   font-size: 0.9rem;
   color: var(--teks-abu);
+  font-weight: 400;
   margin: 0;
   line-height: 1.6;
 }
-.item-kanan { text-align: right; flex-shrink: 0; }
 .item-harga {
   font-size: 1rem;
   font-weight: 600;
   color: var(--teks);
-  display: block;
 }
 
-
-/* KATEGORI RASA */
+/* KATEGORI */
 .kat-rasa {
   background: #f5f5f5;
   padding: 4rem 0;
-  border-top: 1px solid #e0d8d3;
+  border-top: 1px solid #c1c1c1;
 }
-
 .kartu-kat {
-  background: #fff;
-  border-radius: 12px;
+  background: #e6e4e4;
+  border-radius: 10px;
   padding: 1.8rem;
   height: 100%;
   transition: transform 0.2s;
 }
-.kartu-kat:hover {
-  transform: translateY(-3px);
-}
-.kat-ikon {
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
-}
+.kartu-kat:hover { transform: translateY(-3px); }
 .kartu-kat h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--pink-gelap);
   margin-bottom: 0.5rem;
@@ -176,26 +154,26 @@ em, i { font-style: normal; }
 .kartu-kat p {
   font-size: 0.9rem;
   color: var(--teks-abu);
+  font-weight: 400;
   line-height: 1.6;
   margin: 0;
 }
 
-
 /* NEWSLETTER */
 .newsletter {
-  background: linear-gradient(135deg, #C75B39, #4A1A0A);
+  background:  #92432b;
   padding: 4rem 0;
   color: white;
 }
 .newsletter h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 700;
   margin-bottom: 0.8rem;
-  letter-spacing: -0.5px;
 }
 .newsletter p {
   font-size: 1rem;
+  font-weight: 400;
   color: rgba(255,255,255,0.85);
 }
 .newsletter .form-control {
@@ -220,8 +198,8 @@ em, i { font-style: normal; }
   color: white;
   margin-top: 0.8rem;
   font-size: 0.95rem;
+  font-weight: 400;
 }
-
 
 /* FOOTER */
 footer {
@@ -230,17 +208,18 @@ footer {
   padding: 3rem 0 1.5rem;
 }
 .footer-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color:  #eb6309;
   margin-bottom: 0.5rem;
 }
-.footer-brand span { color: #E8A87C; }
-footer p { font-size: 0.95rem; line-height: 1.7; }
+.footer-brand span { color:#a33b19 }
+footer p { font-size: 0.95rem; font-weight: 400; line-height: 1.7; }
 footer h5 {
-  color: white;
+  color: #c5c3c1;
   font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -250,13 +229,7 @@ footer ul li { margin-bottom: 0.5rem; }
 footer ul a {
   color: rgba(245,232,224,0.6);
   font-size: 0.95rem;
+  font-weight: 400;
   text-decoration: none;
   transition: color 0.2s;
-}
-footer ul a:hover { color: #E8A87C; }
-footer hr { border-color: rgba(255,255,255,0.1); }
-.footer-bawah {
-  text-align: center;
-  font-size: 0.85rem;
-  color: rgba(251,250,250,0.35);
 }
