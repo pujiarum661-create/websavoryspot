@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=400;500;600;700;800;900&display=swap');
 
 :root {
   --pink: #D4451A;
-  --pink-gelap: #4A1A0A;
+  --pink-gelap: #80290c;
   --pink-muda: #FFF0E6;
   --pink-soft: #FFDAC1;
   --putih: #FFFAF5;
@@ -11,11 +11,16 @@
   --bg: #FFF8F2;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: 'Poppins', sans-serif !important; /* Memaksa semua elemen default menggunakan Poppins */
+}
+
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Poppins', sans-serif;
   background: var(--bg);
   color: var(--teks);
   font-size: 16px;
@@ -28,7 +33,6 @@ body {
   padding: 1rem 0;
 }
 .navbar-brand {
-  font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--pink) !important;
@@ -49,7 +53,7 @@ body {
   background: var(--pink-muda);
 }
 
-/* HEADER */
+/* BANNER */
 .header-halaman {
   background: linear-gradient(#4a1a0a4f, #08080867), url('bg1.jpg');
   background-position: center;
@@ -60,21 +64,26 @@ body {
 .label {
   font-size: 0.8rem;
   letter-spacing: 2px;
-  text-transform: uppercase;
   color: #FFD4A8;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
+
+.header-halaman em, 
+.header-halaman i,
+.label em,
+.label i {
+  font-style: normal !important;
+}
+
 .header-halaman h1 {
-  font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   margin-bottom: 0.8rem;
 }
-.header-halaman h1 em { color: #facb9b; font-style: italic; }
 .header-halaman p { font-size: 1rem; color: rgba(255,255,255,0.85); }
 
-/* SEKSI MAKANAN */
+/* SEKSI MAKANAN & REKOMENDASI */
 .seksi-makanan {
   padding: 2.5rem 0;
   border-top: 1px solid #f0e0d6;
@@ -90,7 +99,6 @@ body {
   gap: 0.5rem;
 }
 .judul-seksi h2 {
-  font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--pink-gelap);
@@ -105,63 +113,78 @@ body {
 }
 .link-semua:hover { opacity: 0.7; }
 
-/* KARTU KECIL */
-.kartu-kecil {
+/* KARTU KULINER (BESAR & KECIL) */
+.kartu, .kartu-kecil {
   background: rgb(225, 225, 225);
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s;
 }
-.kartu-kecil:hover { transform: translateY(-3px); }
 
-.kk-foto {
-  height: 130px;
+
+.kartu:hover, .kartu-kecil:hover { 
+  transform: none !important; 
+}
+
+.kartu-gambar, .kk-foto {
+  height: 180px;
   overflow: hidden;
   background: var(--pink-muda);
 }
-.kk-foto img {
+.kk-foto { height: 130px; }
+
+.kartu-gambar img, .kk-foto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.kk-isi { padding: 0.85rem; }
-.kk-nama {
-  font-size: 0.92rem;
-  font-weight: 600;
+.kartu-isi, .kk-isi { padding: 0.85rem; }
+
+/* Styling text komponen dalam kartu */
+.kartu-nama, .kk-nama {
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--pink-gelap);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
-.kk-lokasi {
-  font-size: 0.78rem;
+.kk-nama { font-size: 0.92rem; font-weight: 600; }
+
+.kartu-lokasi, .kk-lokasi {
+  font-size: 0.83rem;
   color: var(--teks-abu);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.7rem;
 }
-.kk-bawah { display: flex; justify-content: space-between; }
-.kk-rating {
-  font-size: 0.82rem;
+.kk-lokasi { font-size: 0.78rem; margin-bottom: 0.4rem; }
+
+.kartu-bawah, .kk-bawah { display: flex; justify-content: space-between; align-items: center; }
+
+.kartu-rating, .kk-rating {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--teks);
+}
+.kk-rating { font-size: 0.82rem; color: var(--pink); }
+.kartu-rating .bintang { color: var(--pink); }
+
+.kartu-harga, .kk-harga {
+  font-size: 1rem;
   font-weight: 700;
   color: var(--pink);
 }
-.kk-harga {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--teks-abu);
-}
+.kk-harga { font-size: 0.82rem; color: var(--teks-abu); font-weight: 600; }
 
 /* SEKSI KOTA */
 .seksi-kota {
-  background: linear-gradient(135deg, #C75B39, #4A1A0A);
+  background: linear-gradient(135deg, #C75B39);
   padding: 3rem 0;
 }
 .seksi-kota h2 {
-  font-family: 'Playfair Display', serif;
   font-size: clamp(1.4rem, 3vw, 2rem);
   color: white;
   font-weight: 700;
 }
-.seksi-kota h2 em { color: #fbf9f897; font-style: italic; }
+.seksi-kota h2 em { color: #fbf9f897; font-style: normal !important; }
 
 .kotak-kota {
   display: flex;
@@ -176,14 +199,11 @@ body {
   cursor: pointer;
 }
 .kotak-kota div {
-  font-family: 'Playfair Display', serif;
   font-size: 0.95rem;
   font-weight: 700;
   color: white;
 }
 .kotak-kota:hover { background: rgba(249, 238, 238, 0.15); }
-
-
 
 /* FOOTER */
 footer {
@@ -192,33 +212,65 @@ footer {
   padding: 3rem 0 1.5rem;
 }
 .footer-brand {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: white;
+  color: rgb(228, 97, 21);
   margin-bottom: 0.5rem;
 }
-.footer-brand span { color: #E8A87C; }
-footer p { font-size: 0.95rem; line-height: 1.7; }
+
+.footer-brand span { 
+  color: #a33b19; 
+}
+footer p {
+   font-size: 0.95rem; line-height: 1.7;
+}
 footer h5 {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 0.85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
-footer ul { list-style: none; padding: 0; }
-footer ul li { margin-bottom: 0.5rem; }
+
+footer ul { 
+  list-style: none; padding: 0;
+}
+
+footer ul li {
+   margin-bottom: 0.5rem; 
+  }
 footer ul a {
   color: rgba(245,232,224,0.6);
   font-size: 0.95rem;
   text-decoration: none;
   transition: color 0.2s;
 }
-footer ul a:hover { color: #E8A87C; }
+footer ul a:hover { color: #733d19; }
+
 footer hr { border-color: rgba(255,255,255,0.1); }
-.footer-bawah {
-  text-align: center;
+
+footer h5 {
   font-size: 0.85rem;
-  color: rgba(251,250,250,0.35);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+footer ul { 
+  list-style: none; padding: 0;
+ }
+footer ul li {
+   margin-bottom: 0.5rem; 
+  }
+footer ul a {
+  color: rgba(245,232,224,0.6);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+footer ul a:hover { 
+  color: #E8A87C; 
+}
+footer hr { 
+  border-color: rgba(255,255,255,0.1); 
 }
