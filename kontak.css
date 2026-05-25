@@ -2,7 +2,7 @@
 
 :root {
   --pink: #D4451A;
-  --pink-gelap: #4A1A0A;
+  --pink-gelap:#80290c;
   --pink-muda: #FFF0E6;
   --pink-soft: #FFDAC1;
   --putih: #FFFAF5;
@@ -33,7 +33,7 @@ body {
 }
 
 .navbar-brand {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--pink) !important;
@@ -61,6 +61,10 @@ body {
 }
 
 
+/*FORM + SIDEBAR*/
+.seksi-form {
+  padding: 3rem 0 5rem;
+}
 /*HEADER*/
 .header-halaman {
   background: linear-gradient(#4a1a0a4f, #01010167), url('bg1.jpg');
@@ -80,28 +84,23 @@ body {
 }
 
 .header-halaman h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   margin-bottom: 0.8rem;
 }
 
+
 .header-halaman h1 em {
-  color: #facb9b;
-  font-style: italic;
+  font-style: normal !important;  
+  font-weight: inherit !important; 
+  
 }
 
 .header-halaman p {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.85);
 }
-
-
-/*FORM + SIDEBAR*/
-.seksi-form {
-  padding: 3rem 0 5rem;
-}
-
 .kotak-form {
   background: rgb(231, 229, 229);
   border-radius: 12px;
@@ -111,12 +110,13 @@ body {
 }
 
 .kotak-form h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif, serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--pink-gelap);
   margin-bottom: 0.3rem;
 }
+
 
 /*FORM CONTROLS*/
 .form-control,
@@ -153,6 +153,7 @@ textarea.form-control {
   resize: vertical;
 }
 
+
 /* TOMBOL KIRIM*/
 .tombol-kirim {
   background: var(--pink);
@@ -172,6 +173,7 @@ textarea.form-control {
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(212, 69, 26, 0.3);
 }
+
 
 /*ALERT SUKSES*/
 .alert-sukses {
@@ -195,7 +197,7 @@ textarea.form-control {
 }
 
 .kotak-samping h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--pink-gelap);
@@ -213,6 +215,8 @@ textarea.form-control {
   color: var(--teks-abu);
   line-height: 1.7;
 }
+
+
 
 /*SOSMED*/
 .sosmed-grid {
@@ -266,13 +270,13 @@ textarea.form-control {
 
 /* NEWSLETTER */
 .newsletter {
-  background: linear-gradient(135deg, #C75B39, #4A1A0A);
+  background: linear-gradient(135deg, #92432b);
   padding: 4rem 0;
   color: white;
 }
 
 .newsletter h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif, serif;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
   margin-bottom: 0.8rem;
@@ -315,61 +319,69 @@ textarea.form-control {
 /* FOOTER */
 footer {
   background: var(--pink-gelap);
-  color: rgba(250, 243, 246, 0.7);
+  color: rgba(250,243,246,0.7);
   padding: 3rem 0 1.5rem;
 }
-
 .footer-brand {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: white;
+  color: rgb(228, 97, 21);
   margin-bottom: 0.5rem;
 }
 
-.footer-brand span {
-  color: #E8A87C;
+.footer-brand span { 
+  color: #a33b19; 
 }
-
 footer p {
-  font-size: 0.95rem;
-  line-height: 1.7;
+   font-size: 0.95rem; line-height: 1.7;
 }
-
 footer h5 {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 0.85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
-footer ul {
-  list-style: none;
-  padding: 0;
+footer ul { 
+  list-style: none; padding: 0;
 }
 
 footer ul li {
-  margin-bottom: 0.5rem;
-}
-
+   margin-bottom: 0.5rem; 
+  }
 footer ul a {
-  color: rgba(245, 232, 224, 0.6);
+  color: rgba(245,232,224,0.6);
   font-size: 0.95rem;
   text-decoration: none;
   transition: color 0.2s;
 }
+footer ul a:hover { color: #733d19; }
 
-footer ul a:hover {
-  color: #E8A87C;
-}
+footer hr { border-color: rgba(255,255,255,0.1); }
 
-footer hr {
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.footer-bawah {
-  text-align: center;
+footer h5 {
   font-size: 0.85rem;
-  color: rgba(251, 250, 250, 0.35);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+footer ul { 
+  list-style: none; padding: 0;
+ }
+footer ul li {
+   margin-bottom: 0.5rem; 
+  }
+footer ul a {
+  color: rgba(245,232,224,0.6);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+footer ul a:hover { 
+  color: #E8A87C; 
+}
+footer hr { 
+  border-color: rgba(255,255,255,0.1); 
 }
